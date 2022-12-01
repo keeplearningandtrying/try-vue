@@ -1,0 +1,48 @@
+<DOCTYPE html>
+<html>
+<head>
+ <title>Test Vue List</title>
+ <meta charset='utf-8' />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head><body>
+<div id="events" class="main">
+ <h1>Event List</h1>
+ <event-list :list="this.$store.state.list" />
+</div>
+<script>
+    var mapState = Vuex.mapState
+    const store = new Vuex.Store({
+   state: {
+     list: ["key1", "key2", "key3"],
+     items: {
+       key1: {title: "Title 1"},
+       key2: {title: "Title 2"},
+       key3: {title: "Title 3"},
+     }
+   }
+ })
+ Vue.component('event-list', {
+  template: "<ul><li v-for='key in list'><event-list-item :key=\"key\" /></li></ul>",
+  props: {
+    list: {
+      type: Array,
+      required: true
+    }
+  } 
+})
+ Vue.component('event-list-item', {
+  template: "<h4>{{ item.title }}</h4>",
+  data: function() {
+    return {
+      item: store.state.items[this.$vnode.key]   
+    }
+  }
+})
+var app = new Vue({
+  el: '#events',
+  store
+})</script>
+</body>
+</html>
