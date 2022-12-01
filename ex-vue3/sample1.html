@@ -6,12 +6,14 @@
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-  <div id="app">
-    <h1>{{ message }}</h1>
-  </div>
-  
-  <script>
-    Vue.createApp({
+ 
+  <script type="module">
+    const { createApp } = Vue;
+
+    // this doesn't work
+    // import { createApp } from 'vue'
+
+    createApp({
       data() {
         return {
           message: 'hello world!'
@@ -19,6 +21,11 @@
       }
     }).mount('#app')
   </script>
+
+ <div id="app">
+    <h1>{{ message }}</h1>
+  </div>
+  
 </body>
 
 </html>

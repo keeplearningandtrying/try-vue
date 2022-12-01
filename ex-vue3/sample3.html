@@ -1,3 +1,4 @@
+
 <DOCTYPE html>
 <html>
 <head>
@@ -6,52 +7,49 @@
   <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-    <div id="app">
-        <!--
-    Note we don't need .value inside templates because
-    refs are automatically "unwrapped" in templates.
-  -->
-        <h1>{{ message }}</h1>
-
-        <!--
-    Bind to a method/function.
-    The @click syntax is short for v-on:click.
-  -->
-        <button @click="reverseMessage">Reverse Message</button>
-
-        <!-- Can also be an inline expression statement -->
-        <button @click="message += '!'">Append "!"</button>
-
-        <!--
-    Vue also provides modifiers for common tasks
-    such as e.preventDefault() and e.stopPropagation()
-  -->
-        <a href="https://vuejs.org" @click.prevent="notify">
-            A link with e.preventDefault()
-        </a>
-    </div>
 
     <script type="module">
-        // it doesn't work this way in html
-        // import { createApp } from 'vue'
+        const { createApp } = Vue;
 
-        Vue.createApp({
+        createApp({
             data() {
                 return {
-                    message: 'Hello World!'
+                    message: 'Hello World!',
+                    isRed: true,
+                    color: 'green'
                 }
             },
             methods: {
-                reverseMessage() {
-                    this.message = this.message.split('').reverse().join('')
+                toggleRed() {
+                    this.isRed = !this.isRed
                 },
-                notify() {
-                    alert('navigation was prevented.')
+                toggleColor() {
+                    this.color = this.color === 'green' ? 'blue' : 'green'
                 }
             }
         }).mount('#app')
     </script>
+    
+    <div id="app">
+        <p>
+            <span :title="message">
+                Hover your mouse over me for a few seconds to see my dynamically bound title!
+            </span>
+        </p>
+    
+        <!--
+      class bindings have special support for objects and arrays
+      in addition to plain strings
+      -->
+        <p :class="{ red: isRed }" @click="toggleRed">
+            This should be red... but click me to toggle it.
+        </p>
+    
+        <!-- style bindings also support object and arrays -->
+        <p :style="{ color }" @click="toggleColor">
+            This should be green, and should toggle between green and blue on click.
+        </p>
+    </div>
 
 </body>
-
 </html>

@@ -1,4 +1,8 @@
 const { createApp, ref, computed } = Vue;
+
+// this doesn't work
+// import { createApp, ref, computed } from 'vue'
+
 const app = createApp({
   setup() {
     const someValue = ref(10);

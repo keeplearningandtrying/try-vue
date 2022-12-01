@@ -35,7 +35,9 @@
         // it doesn't work this way in html
         // import { createApp } from 'vue'
 
-        Vue.createApp({
+        const { createApp } = Vue;
+
+        createApp({
             data() {
                 return {
                     message: 'Hello World!'
