@@ -1,0 +1,54 @@
+
+<DOCTYPE html>
+<html>
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script src="https://unpkg.com/vue@3"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/marked/+esm"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/lodash-es/+esm"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+<body>
+
+  <script type="module">
+// import { createApp } from 'vue'
+// import { marked } from 'marked'
+// import { debounce } from 'lodash-es'
+
+const { createApp } = Vue;
+// const { marked } = marked;
+// const { debounce } = debounce;
+
+createApp({
+  data: () => ({
+    input: '# hello'
+  }),
+  computed: {
+    output() {
+      //return marked(this.input)
+      return this.input
+    }
+  },
+  methods: {
+    // update: debounce(function (e) {
+    //   this.input = e.target.value
+    // }, 100)
+    update(e) {
+      this.input = e.target.value
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <div class="editor">
+    <textarea class="input" :value="input" @input="update"></textarea>
+    <div class="output" v-html="output"></div>
+  </div>
+</div>
+
+
+</body>
+</html>
