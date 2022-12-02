@@ -13,13 +13,18 @@
 <body>
 
   <script type="module">
+// import is specific to nodejs
 // import { createApp } from 'vue'
 // import { marked } from 'marked'
 // import { debounce } from 'lodash-es'
 
+
 const { createApp } = Vue;
 // const { marked } = marked;
 // const { debounce } = debounce;
+
+// require is specific to nodejs
+// const marked = require("marked")
 
 createApp({
   data: () => ({
