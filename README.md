@@ -38,3 +38,7 @@
 * https://medium.com/jeremy-keeshin/hello-world-for-javascript-with-npm-modules-in-the-browser-6020f82d1072 (good)
   * https://thekeesh.com/hellobrowsernpm/newway.html
   * https://github.com/jkeesh/hello-browser-npm
+
+* https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
+* https://www.digitalocean.com/community/tutorials/how-to-dynamically-import-javascript-with-import-maps
+* https://stackoverflow.com/questions/73288466/import-using-esm-from-cdn-throwing-errors-picmo
