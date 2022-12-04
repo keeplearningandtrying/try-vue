@@ -1,0 +1,71 @@
+
+<DOCTYPE html>
+<html>
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+</head>
+<body>
+  <script type="module">
+import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?module'
+import PolyGraph from './PolyGraph.js'
+
+createApp({
+  components: {
+    PolyGraph
+  },
+  data: () => ({
+    newLabel: '',
+    stats: [
+      { label: 'A', value: 100 },
+      { label: 'B', value: 100 },
+      { label: 'C', value: 100 },
+      { label: 'D', value: 100 },
+      { label: 'E', value: 100 },
+      { label: 'F', value: 100 }
+    ]
+  }),
+  methods: {
+    add(e) {
+      e.preventDefault()
+      if (!this.newLabel) return
+      this.stats.push({
+        label: this.newLabel,
+        value: 100
+      })
+      this.newLabel = ''
+    },
+    remove(stat) {
+      if (this.stats.length > 3) {
+        this.stats.splice(this.stats.indexOf(stat), 1)
+      } else {
+        alert("Can't delete more!")
+      }
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <svg width="200" height="200">
+    <poly-graph :stats="stats"></poly-graph>
+  </svg>
+
+  <!-- controls -->
+  <div v-for="stat in stats">
+    <label>{{stat.label}}</label>
+    <input type="range" v-model="stat.value" min="0" max="100">
+    <span>{{stat.value}}</span>
+    <button @click="remove(stat)" class="remove">X</button>
+  </div>
+
+  <form id="add">
+    <input name="newlabel" v-model="newLabel">
+    <button @click="add">Add a Stat</button>
+  </form>
+
+  <pre id="raw">{{ stats }}</pre>
+</div>
+
+</body>
+</html>
