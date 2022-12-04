@@ -1,0 +1,44 @@
+
+<DOCTYPE html>
+<html>
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+   <link rel="stylesheet" href="sample9.css">
+</head>
+<body>
+
+<script type="module">
+import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?module'
+import DemoGrid from './Grid.js?module'
+
+createApp({
+  components: {
+    DemoGrid
+  },
+  data: () => ({
+    searchQuery: '',
+    gridColumns: ['name', 'power'],
+    gridData: [
+      { name: 'Chuck Norris', power: Infinity },
+      { name: 'Bruce Lee', power: 9000 },
+      { name: 'Jackie Chan', power: 7000 },
+      { name: 'Jet Li', power: 8000 }
+    ]
+  })
+}).mount('#app')
+</script>
+
+<div id="app">
+  <form id="search">
+    Search <input name="query" v-model="searchQuery">
+  </form>
+  <demo-grid
+    :data="gridData"
+    :columns="gridColumns"
+    :filter-key="searchQuery">
+  </demo-grid>
+</div>
+
+</body>
+</html>
