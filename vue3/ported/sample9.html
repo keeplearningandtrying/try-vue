@@ -1,25 +1,24 @@
-<DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
 
-  <head>
-    <title>Vue Demo #1: The Box App</title>
-    <meta charset='utf-8' />
-    <link rel="stylesheet" href="sample9.css">
-    <script src="https://unpkg.com/vue@3"></script>
-  </head>
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <link rel="stylesheet" href="sample9.css">
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
 
-  <body>
+<body>
 
-    <div id="app">
-      <form id="search">
-        Search <input name="query" v-model="searchQuery">
-      </form>
-      <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery">
-      </demo-grid>
-    </div>
+  <div id="app">
+    <form id="search">
+      Search <input name="query" v-model="searchQuery">
+    </form>
+    <demo-grid :data="gridData" :columns="gridColumns" :filter-key="searchQuery">
+    </demo-grid>
+  </div>
 
+  <script src="sample9.js" type="module"></script>
+</body>
 
-    <script src="sample9.js" type="module"></script>
-  </body>
-
-  </html>
+</html>

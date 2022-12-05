@@ -1,61 +1,61 @@
-<DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <title>Vue Demo #1: The Box App</title>
-        <meta charset='utf-8' />
-        <script src="https://unpkg.com/vue@3"></script>
-    </head>
+<head>
+    <title>Vue Demo #1: The Box App</title>
+    <meta charset='utf-8' />
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
 
-    <body>
-        <div id="app">
-            <!--
+<body>
+    <div id="app">
+        <!--
     Note we don't need .value inside templates because
     refs are automatically "unwrapped" in templates.
   -->
-            <h1>{{ message }}</h1>
+        <h1>{{ message }}</h1>
 
-            <!--
+        <!--
     Bind to a method/function.
     The @click syntax is short for v-on:click.
   -->
-            <button @click="reverseMessage">Reverse Message</button>
+        <button @click="reverseMessage">Reverse Message</button>
 
-            <!-- Can also be an inline expression statement -->
-            <button @click="message += '!'">Append "!"</button>
+        <!-- Can also be an inline expression statement -->
+        <button @click="message += '!'">Append "!"</button>
 
-            <!--
+        <!--
     Vue also provides modifiers for common tasks
     such as e.preventDefault() and e.stopPropagation()
   -->
-            <a href="https://vuejs.org" @click.prevent="notify">
-                A link with e.preventDefault()
-            </a>
-        </div>
+        <a href="https://vuejs.org" @click.prevent="notify">
+            A link with e.preventDefault()
+        </a>
+    </div>
 
-        <script type="module">
-            // it doesn't work this way in html
-            // import { createApp } from 'vue'
+    <script type="module">
+        // it doesn't work this way in html
+        // import { createApp } from 'vue'
 
-            const { createApp } = Vue;
+        const { createApp } = Vue;
 
-            createApp({
-                data() {
-                    return {
-                        message: 'Hello World!'
-                    }
-                },
-                methods: {
-                    reverseMessage() {
-                        this.message = this.message.split('').reverse().join('')
-                    },
-                    notify() {
-                        alert('navigation was prevented.')
-                    }
+        createApp({
+            data() {
+                return {
+                    message: 'Hello World!'
                 }
-            }).mount('#app')
-        </script>
+            },
+            methods: {
+                reverseMessage() {
+                    this.message = this.message.split('').reverse().join('')
+                },
+                notify() {
+                    alert('navigation was prevented.')
+                }
+            }
+        }).mount('#app')
+    </script>
 
-    </body>
+</body>
 
-    </html>
+</html>

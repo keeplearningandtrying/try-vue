@@ -1,33 +1,33 @@
-<DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
 
-  <head>
-    <title>Vue Demo #1: The Box App</title>
-    <meta charset='utf-8' />
-    <script src="https://unpkg.com/vue@3"></script>
-  </head>
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script src="https://unpkg.com/vue@3"></script>
+</head>
 
-  <body>
+<body>
 
-    <script type="module">
-      const { createApp } = Vue;
+  <script type="module">
+    const { createApp } = Vue;
 
-      // this doesn't work
-      // import { createApp } from 'vue'
+    // this doesn't work
+    // import { createApp } from 'vue'
 
-      createApp({
-        data() {
-          return {
-            message: 'hello world!'
-          }
+    createApp({
+      data() {
+        return {
+          message: 'hello world!'
         }
-      }).mount('#app')
-    </script>
+      }
+    }).mount('#app')
+  </script>
 
-    <div id="app">
-      <h1>{{ message }}</h1>
-    </div>
+  <div id="app">
+    <h1>{{ message }}</h1>
+  </div>
 
-  </body>
+</body>
 
-  </html>
+</html>

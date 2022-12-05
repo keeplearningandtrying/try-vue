@@ -1,30 +1,30 @@
-<DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <title>Vue Demo #1: The Box App</title>
-        <meta charset='utf-8' />
-        <script src="https://unpkg.com/vue@3"></script>
-    </head>
+<head>
+    <title>Vue Demo #1: The Box App</title>
+    <meta charset='utf-8' />
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
 
-    <body>
-        <div id="app">
-            <h1>test</h1>
-            <h1>{{ message }}</h1>
-        </div>
+<body>
+    <div id="app">
+        <h1>test</h1>
+        <h1>{{ message }}</h1>
+    </div>
 
-        <script>
-            Vue.createApp({
-                data() {
-                    return {
-                        message: 'hello world!'
-                    }
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'hello world!'
                 }
-            }).mount('#app')
-        </script>
+            }
+        }).mount('#app')
+    </script>
 
-    </body>
+</body>
 
-    </html>
+</html>
 
-    <!-- https://github.com/vuejs/vue-cli/blob/v4/packages/@vue/cli-service/lib/commands/build/demo-lib.html -->
+<!-- https://github.com/vuejs/vue-cli/blob/v4/packages/@vue/cli-service/lib/commands/build/demo-lib.html -->

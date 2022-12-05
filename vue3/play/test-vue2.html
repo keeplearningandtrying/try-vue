@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
-  <title>My GK</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
+    <title>My GK</title>
 </head>
 
 <body>
- <div id="app">
-    Some value: {{ someValue }} <br />
-    Some computed value: {{ someComputed }}
-</div>
-<script>
-    new Vue({
-        el: "#app",
-        data() {
-            return {
-                someValue: 10
+    <div id="app">
+        Some value: {{ someValue }} <br />
+        Some computed value: {{ someComputed }}
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    someValue: 10
+                }
+            },
+            computed: {
+                someComputed() {
+                    return this.someValue * 10 - 201;
+                }
             }
-        },
-        computed: {
-            someComputed() {
-                return this.someValue * 10 - 201;
-            }
-        }
-    });
-</script>
+        });
+    </script>
 </body>
 
 </html>
