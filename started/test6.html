@@ -1,48 +1,108 @@
-<DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
- <title>Test Vue List</title>
- <meta charset='utf-8' />
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.js"></script>
- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</head><body>
-<div id="events" class="main">
- <h1>Event List</h1>
- <event-list :list="this.$store.state.list" />
+    <meta charset="UTF-8">
+    <title>Vue Test</title>
+
+    <!-- This is a development version of Vue.js! -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- import stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Basic usage -->
+
+<div id="app_basic" v-bind:title="timestamp" class="experiment-block">
+    {{ message }}
 </div>
+
 <script>
-    var mapState = Vuex.mapState
-    const store = new Vuex.Store({
-   state: {
-     list: ["key1", "key2", "key3"],
-     items: {
-       key1: {title: "Title 1"},
-       key2: {title: "Title 2"},
-       key3: {title: "Title 3"},
-     }
-   }
- })
- Vue.component('event-list', {
-  template: "<ul><li v-for='key in list'><event-list-item :key=\"key\" /></li></ul>",
-  props: {
-    list: {
-      type: Array,
-      required: true
-    }
-  } 
-})
- Vue.component('event-list-item', {
-  template: "<h4>{{ item.title }}</h4>",
-  data: function() {
-    return {
-      item: store.state.items[this.$vnode.key]   
-    }
-  }
-})
-var app = new Vue({
-  el: '#events',
-  store
-})</script>
+    new Vue(
+        {
+            el: '#app_basic',
+            data: {
+                message: '🐵 Hello World 🔮',
+                timestamp: `Timestamp ${new Date().toLocaleString()}`,
+            },
+        });
+</script>
+
+<!-- Loops -->
+
+<div id="app_loops" class="experiment-block">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<script>
+    new Vue(
+        {
+            el: '#app_loops',
+            data: {
+                todos: [{
+                    text: 'Learn JavaScript',
+                },
+                    {
+                        text: 'Learn Vue',
+                    },
+                    {
+                        text: 'Build something awesome',
+                    },
+                ],
+            },
+        });
+</script>
+
+<!-- OnClick -->
+
+<div id="app_onclick" class="experiment-block">
+    <span>{{ message }}</span>
+    <button v-on:click="randomGenerate">Click me</button>
+</div>
+
+<script>
+    new Vue(
+        {
+            el: '#app_onclick',
+            data: {
+                message: "Click me (random number generate)",
+            },
+            methods: {
+                randomGenerate() {
+                    this.message = Math.random();
+                },
+            },
+        });
+</script>
+
+<!-- Data binding -->
+
+<div id="app_model" class="experiment-block">
+    <p>{{ value }}</p>
+    <input v-model="value">
+</div>
+
+<script>
+    new Vue(
+        {
+            el: '#app_model',
+            data: {
+                value: "Some string data",
+            },
+        });
+</script>
+
 </body>
+
 </html>

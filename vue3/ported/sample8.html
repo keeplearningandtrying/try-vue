@@ -1,70 +1,72 @@
-
 <DOCTYPE html>
-<html>
-<head>
-  <title>Vue Demo #1: The Box App</title>
-  <meta charset='utf-8' />
-  <script src="https://unpkg.com/vue@3"></script>
-</head>
-<body>
+  <html>
 
-  <script type="module">
+  <head>
+    <title>Vue Demo #1: The Box App</title>
+    <meta charset='utf-8' />
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
 
-    const { createApp } = Vue;
+  <body>
 
-    const API_URL = `https://api.github.com/repos/vuejs/core/commits?per_page=3&sha=`
+    <script type="module">
 
-    createApp({
-      data: () => ({
-        branches: ['main', 'v2-compat'],
-        currentBranch: 'main',
-        commits: null
-      }),
+      const { createApp } = Vue;
 
-      created() {
-        // fetch on init
-        this.fetchData()
-      },
+      const API_URL = `https://api.github.com/repos/vuejs/core/commits?per_page=3&sha=`
 
-      watch: {
-        // re-fetch whenever currentBranch changes
-        currentBranch: 'fetchData'
-      },
+      createApp({
+        data: () => ({
+          branches: ['main', 'v2-compat'],
+          currentBranch: 'main',
+          commits: null
+        }),
 
-      methods: {
-        async fetchData() {
-          const url = `${API_URL}${this.currentBranch}`
-          this.commits = await (await fetch(url)).json()
+        created() {
+          // fetch on init
+          this.fetchData()
         },
-        truncate(v) {
-          const newline = v.indexOf('\n')
-          return newline > 0 ? v.slice(0, newline) : v
+
+        watch: {
+          // re-fetch whenever currentBranch changes
+          currentBranch: 'fetchData'
         },
-        formatDate(v) {
-          return v.replace(/T|Z/g, ' ')
+
+        methods: {
+          async fetchData() {
+            const url = `${API_URL}${this.currentBranch}`
+            this.commits = await (await fetch(url)).json()
+          },
+          truncate(v) {
+            const newline = v.indexOf('\n')
+            return newline > 0 ? v.slice(0, newline) : v
+          },
+          formatDate(v) {
+            return v.replace(/T|Z/g, ' ')
+          }
         }
-      }
-    }).mount('#app')
-  </script>
+      }).mount('#app')
+    </script>
 
-  <div id="app">
-    <h1>Latest Vue Core Commits</h1>
-    <template v-for="branch in branches">
-      <input type="radio" :id="branch" :value="branch" name="branch" v-model="currentBranch">
-      <label :for="branch">{{ branch }}</label>
-    </template>
-    <p>vuejs/vue@{{ currentBranch }}</p>
-    <ul>
-      <li v-for="{ html_url, sha, author, commit } in commits">
-        <a :href="html_url" target="_blank" class="commit">{{ sha.slice(0, 7) }}</a>
-        - <span class="message">{{ truncate(commit.message) }}</span><br>
-        by <span class="author">
-          <a :href="author.html_url" target="_blank">{{ commit.author.name }}</a>
-        </span>
-        at <span class="date">{{ formatDate(commit.author.date) }}</span>
-      </li>
-    </ul>
-  </div>
+    <div id="app">
+      <h1>Latest Vue Core Commits</h1>
+      <template v-for="branch in branches">
+        <input type="radio" :id="branch" :value="branch" name="branch" v-model="currentBranch">
+        <label :for="branch">{{ branch }}</label>
+      </template>
+      <p>vuejs/vue@{{ currentBranch }}</p>
+      <ul>
+        <li v-for="{ html_url, sha, author, commit } in commits">
+          <a :href="html_url" target="_blank" class="commit">{{ sha.slice(0, 7) }}</a>
+          - <span class="message">{{ truncate(commit.message) }}</span><br>
+          by <span class="author">
+            <a :href="author.html_url" target="_blank">{{ commit.author.name }}</a>
+          </span>
+          at <span class="date">{{ formatDate(commit.author.date) }}</span>
+        </li>
+      </ul>
+    </div>
 
-</body>
-</html>
+  </body>
+
+  </html>

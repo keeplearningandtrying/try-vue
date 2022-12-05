@@ -1,38 +1,40 @@
-
 <DOCTYPE html>
-<html>
-<head>
-  <title>Vue Demo #1: The Box App</title>
-  <meta charset='utf-8' />
-  <script src="https://unpkg.com/vue@3"></script>
-</head>
-<body>
+    <html>
 
-    <div id="app">
-        <button @click="show = !show">Toggle List</button>
-        <button @click="list.push(list.length + 1)">Push Number</button>
-        <button @click="list.pop()">Pop Number</button>
-        <button @click="list.reverse()">Reverse List</button>
+    <head>
+        <title>Vue Demo #1: The Box App</title>
+        <meta charset='utf-8' />
+        <script src="https://unpkg.com/vue@3"></script>
+    </head>
 
-        <ul v-if="show && list.length">
-            <li v-for="item of list">{{ item }}</li>
-        </ul>
-        <p v-else-if="list.length">List is not empty, but hidden.</p>
-        <p v-else>List is empty.</p>
-    </div>
+    <body>
 
-    <script type="module">
-        const { createApp } = Vue;
+        <div id="app">
+            <button @click="show = !show">Toggle List</button>
+            <button @click="list.push(list.length + 1)">Push Number</button>
+            <button @click="list.pop()">Pop Number</button>
+            <button @click="list.reverse()">Reverse List</button>
 
-        createApp({
-            data() {
-                return {
-                    show: true,
-                    list: [1, 2, 3]
+            <ul v-if="show && list.length">
+                <li v-for="item of list">{{ item }}</li>
+            </ul>
+            <p v-else-if="list.length">List is not empty, but hidden.</p>
+            <p v-else>List is empty.</p>
+        </div>
+
+        <script type="module">
+            const { createApp } = Vue;
+
+            createApp({
+                data() {
+                    return {
+                        show: true,
+                        list: [1, 2, 3]
+                    }
                 }
-            }
-        }).mount('#app')
-    </script>
+            }).mount('#app')
+        </script>
 
-</body>
-</html>
+    </body>
+
+    </html>

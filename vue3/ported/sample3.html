@@ -1,55 +1,57 @@
-
 <DOCTYPE html>
-<html>
-<head>
-  <title>Vue Demo #1: The Box App</title>
-  <meta charset='utf-8' />
-  <script src="https://unpkg.com/vue@3"></script>
-</head>
-<body>
+    <html>
 
-    <script type="module">
-        const { createApp } = Vue;
+    <head>
+        <title>Vue Demo #1: The Box App</title>
+        <meta charset='utf-8' />
+        <script src="https://unpkg.com/vue@3"></script>
+    </head>
 
-        createApp({
-            data() {
-                return {
-                    message: 'Hello World!',
-                    isRed: true,
-                    color: 'green'
-                }
-            },
-            methods: {
-                toggleRed() {
-                    this.isRed = !this.isRed
+    <body>
+
+        <script type="module">
+            const { createApp } = Vue;
+
+            createApp({
+                data() {
+                    return {
+                        message: 'Hello World!',
+                        isRed: true,
+                        color: 'green'
+                    }
                 },
-                toggleColor() {
-                    this.color = this.color === 'green' ? 'blue' : 'green'
+                methods: {
+                    toggleRed() {
+                        this.isRed = !this.isRed
+                    },
+                    toggleColor() {
+                        this.color = this.color === 'green' ? 'blue' : 'green'
+                    }
                 }
-            }
-        }).mount('#app')
-    </script>
-    
-    <div id="app">
-        <p>
-            <span :title="message">
-                Hover your mouse over me for a few seconds to see my dynamically bound title!
-            </span>
-        </p>
-    
-        <!--
+            }).mount('#app')
+        </script>
+
+        <div id="app">
+            <p>
+                <span :title="message">
+                    Hover your mouse over me for a few seconds to see my dynamically bound title!
+                </span>
+            </p>
+
+            <!--
       class bindings have special support for objects and arrays
       in addition to plain strings
       -->
-        <p :class="{ red: isRed }" @click="toggleRed">
-            This should be red... but click me to toggle it.
-        </p>
-    
-        <!-- style bindings also support object and arrays -->
-        <p :style="{ color }" @click="toggleColor">
-            This should be green, and should toggle between green and blue on click.
-        </p>
-    </div>
+            <p :class="{ red: isRed }" @click="toggleRed">
+                This should be red... but click me to toggle it.
+            </p>
 
-</body>
-</html>
+            <!-- style bindings also support object and arrays -->
+            <p :style="{ color }" @click="toggleColor">
+                This should be green, and should toggle between green and blue on click.
+            </p>
+        </div>
+
+    </body>
+
+    </html>

@@ -1,25 +1,27 @@
-
 <DOCTYPE html>
-<html>
-<head>
-  <title>Vue Demo #1: The Box App</title>
-  <meta charset='utf-8' />
-  <script src="https://unpkg.com/vue@3"></script>
-</head>
-<body>
+  <html>
+
+  <head>
+    <title>Vue Demo #1: The Box App</title>
+    <meta charset='utf-8' />
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+
+  <body>
 
     <div id="app">
-        <ol>
-            <!--
+      <ol>
+        <!--
           We are providing each todo-item with the todo object
           it's representing, so that its content can be dynamic.
           We also need to provide each component with a "key",
           which is explained in the guide section on v-for.
         -->
-            <todo-item v-for="item in groceryList" :todo="item" :key="item.id"></todo-item>
-        </ol>
+        <todo-item v-for="item in groceryList" :todo="item" :key="item.id"></todo-item>
+      </ol>
     </div>
 
     <script src="sample6.js" type="module"></script>
-</body>
-</html>
+  </body>
+
+  </html>
