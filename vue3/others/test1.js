@@ -1,4 +1,5 @@
 import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?module'
+// import "./test.css"
 
 createApp({
   data() {
@@ -84,5 +85,10 @@ createApp({
       </div>
     </li>
   </ul>
+  <style>
+.strikeout {
+  text-decoration: line-through;
+}
+</style>
   `
 }).mount('#app')
