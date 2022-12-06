@@ -46,7 +46,7 @@
 </head>
 
 <body>
-  <div id="vapp">
+  <div id="app">
     <display-post></display-post>
     <hr>
     <edit-post v-show="display === 'edit'"></edit-post>
@@ -93,8 +93,8 @@
       <button v-on:click="$root.showEdit()">edit</button></div>`,
       computed: mapState(['post', 'user'])
     })
-    const vapp = new Vue({
-      el: "#vapp",
+    const app = new Vue({
+      el: "#app",
       store,
       data: {
         display: "noEdit"
