@@ -31,6 +31,8 @@
   
   * https://codesandbox.io/s/vue
 
+  * https://learnvue.co/tutorials/intro-to-vue-3
+
 ## Use ES6 JavaScript syntax (require, import etc.) in your Front end project
 * https://stackoverflow.com/questions/59317194/how-to-use-npm-package-as-normal-javascript-in-html
 * https://hackernoon.com/use-es6-javascript-syntax-require-import-etc-in-your-front-end-project-5eefcef745c2
