@@ -3,12 +3,12 @@ import $ from 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/+esm?module'
 
 createApp({
     data() {
-      return {
-        marathons: [],
-        currentMarathon: [],
-        newMarathon: { name:"", url:""},
-        currentPage: 1
-      }
+        return {
+            marathons: [],
+            currentMarathon: [],
+            newMarathon: { name: "", url: "" },
+            currentPage: 1
+        }
     },
     created: function () {
         this.loadMarathons();
@@ -34,7 +34,8 @@ createApp({
         loadPage(page) {
             this.currentPage = page;
             this.loadMarathons();
+            this.loadMarathon((page - 1) * 10 + 1);
         },
-   }
+    }
 }).mount('#app');
 
