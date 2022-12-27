@@ -23,7 +23,7 @@ createApp({
             // doesn't work
             // self.marathons = marathons;
 
-            var url = 'marathons' + self.currentPage.toString() + '.json';
+            var url = 'data/marathons' + self.currentPage.toString() + '.json';
 
             // either of the following ways works
             $.get(url, function (data) {
@@ -34,7 +34,7 @@ createApp({
 
         loadMarathon(id) {
             let self = this;
-            var url = 'marathon' + id.toString() + '.json';
+            var url = 'data/marathon' + id.toString() + '.json';
             $.get(url, function (data) {
                 self.currentMarathon = data
             });

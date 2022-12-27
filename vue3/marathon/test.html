@@ -48,7 +48,7 @@
                 <tbody>
                 <tr v-for="marathon in marathons.data">
                     <td style="width: 90%">
-                        <a href="#" @click="loadMarathon(marathon.id)">{{marathon.name}}</a>
+                        <a href="#" @click="loadMarathon(marathon.id)">{{marathon.id}} - {{marathon.name}}</a>
                 </tr>
                 </tbody>
             </table>
@@ -56,8 +56,9 @@
             <div class="col-md-8">
                 <li>Name: {{currentMarathon.name}}</li>
                 <li>Date: {{currentMarathon.date}}</li>
+                <li>Location: {{currentMarathon.location}}</li>
                 <li>Finish Time: {{currentMarathon.time}}</li>
-                <img v-bind:src="currentMarathon.picture" v-bind:alt="hasImageDescription"  height="350">
+                <img v-bind:src="currentMarathon.picture" v-bind:alt="currentMarathon.name"  height="350">
 
             </div>
             </div>
