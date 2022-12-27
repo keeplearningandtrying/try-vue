@@ -1,13 +1,13 @@
 {
-    "hasNext": true,
-    "hasPrevious": false,
-    "pageNumber": 1,
+    "hasNext": false,
+    "hasPrevious": true,
+    "pageNumber": 4,
     "totalPages": 4,
 
     "data": [
         {
             "id": 15,
-            "title": "First item on first page",
+            "title": "First item on fourth page",
             "url": "https://sivalabs.in/spring-boot-testing",
             "createdAt": "2022-12-27T01:45:04.087661Z"
         },

@@ -1,12 +1,14 @@
 {
-    "isFirst": false,
-    "isLast": true,
-    "hasNext": false,
+    "hasNext": true,
     "hasPrevious": true,
+    "pageNumber": 2,
+    "totalPages": 4,
+
+
     "data": [
         {
             "id": 4,
-            "title": "Kubernetes - Blue/Green Deployments",
+            "title": "First item on second page",
             "url": "https://sivalabs.in/kubernetes-blue-green-deployments",
             "createdAt": "2022-12-27T01:45:04.087661Z"
         },
@@ -28,8 +30,5 @@
             "url": "https://sivalabs.in/few-things-i-learned-the-hardway-in-15-years-of-my-career",
             "createdAt": "2022-12-27T01:45:04.087661Z"
         }
-    ],
-    "totalElements": 14,
-    "pageNumber": 2,
-    "totalPages": 2
+    ]
 }

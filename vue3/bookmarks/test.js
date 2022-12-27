@@ -1,5 +1,7 @@
 import { createApp } from 'https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js?module'
 import $ from 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/+esm?module'
+
+//Loading module from “http://localhost:8081/vue3/bookmarks/bookmarks1.json?module” was blocked because of a disallowed MIME type (“application/json”)
 // import bookmarks1 from "./bookmarks1.json?module";
 
 createApp({
