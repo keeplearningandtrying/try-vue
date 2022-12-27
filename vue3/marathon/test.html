@@ -23,8 +23,8 @@
 
     <div id="app" class="container">
        <div style="height:50px;"></div>
-       <div class="col-md-12">
-            <div>
+       <div class="col-md-12 float-left">
+            <div class="float-left">
                 <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
                     <ul class="pagination pagination justify-content-center">
                         <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
@@ -48,15 +48,16 @@
                 <tbody>
                 <tr v-for="marathon in marathons.data">
                     <td style="width: 90%">
-                        <a class="page-link" href="#" @click="loadMarathon(marathon.id)">{{marathon.name}}</a></td>
+                        <a href="#" @click="loadMarathon(marathon.id)">{{marathon.name}}</a>
                 </tr>
                 </tbody>
             </table>
             </div>
             <div class="col-md-8">
-                <li>{{currentMarathon.name}}</li>
-                <li>{{currentMarathon.date}}</li>
-                <li>{{currentMarathon.time}}</li>
+                <li>Name: {{currentMarathon.name}}</li>
+                <li>Date: {{currentMarathon.date}}</li>
+                <li>Finish Time: {{currentMarathon.time}}</li>
+                <img v-bind:src="currentMarathon.picture" v-bind:alt="hasImageDescription"  height="350">
 
             </div>
             </div>
