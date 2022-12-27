@@ -53,3 +53,10 @@
 * https://vuejs.org/guide/quick-start.html#using-vue-from-cdn
 * https://www.digitalocean.com/community/tutorials/how-to-dynamically-import-javascript-with-import-maps
 * https://stackoverflow.com/questions/73288466/import-using-esm-from-cdn-throwing-errors-picmo
+
+## Serve local json content
+* https://www.npmjs.com/package/json-server
+  * D:\wei\dev\ui\vue-html\temp>json-server bookmarks.json
+  * http://localhost:3000/bookmarks
+* D:\wei\dev\ui\vue-html>http-server
+  * http://localhost:8081/temp/bookmarks1.json
