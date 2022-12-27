@@ -1,0 +1,35 @@
+{
+    "isFirst": false,
+    "isLast": true,
+    "hasNext": false,
+    "hasPrevious": true,
+    "data": [
+        {
+            "id": 4,
+            "title": "Kubernetes - Blue/Green Deployments",
+            "url": "https://sivalabs.in/kubernetes-blue-green-deployments",
+            "createdAt": "2022-12-27T01:45:04.087661Z"
+        },
+        {
+            "id": 6,
+            "title": "Getting Started with Kubernetes",
+            "url": "https://sivalabs.in/getting-started-with-kubernetes",
+            "createdAt": "2022-12-27T01:45:04.087661Z"
+        },
+        {
+            "id": 7,
+            "title": "Get Super Productive with Intellij File Templates",
+            "url": "https://sivalabs.in/get-super-productive-with-intellij-file-templates",
+            "createdAt": "2022-12-27T01:45:04.087661Z"
+        },
+        {
+            "id": 8,
+            "title": "Few Things I learned in the HardWay in 15 years of my career",
+            "url": "https://sivalabs.in/few-things-i-learned-the-hardway-in-15-years-of-my-career",
+            "createdAt": "2022-12-27T01:45:04.087661Z"
+        }
+    ],
+    "totalElements": 14,
+    "pageNumber": 2,
+    "totalPages": 2
+}

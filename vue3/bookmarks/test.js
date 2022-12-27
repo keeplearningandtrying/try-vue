@@ -19,9 +19,11 @@ createApp({
             // doesn't work
             // self.bookmarks = bookmarks1;
 
+            var url = 'bookmarks' + self.currentPage.toString() + '.json';
+
             // either of the following ways works
-            // $.get("bookmarks1.json", function (data) {
-            $.getJSON("http://localhost:3000/bookmarks", function (data) {
+            $.get(url, function (data) {
+            //$.getJSON("http://localhost:3000/bookmarks", function (data) {
                 self.bookmarks = data
             });
         },
