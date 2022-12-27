@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>Wei's Marathon Running</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-    <link rel="stylesheet" href="bootstrap/5.1.3/css/bootstrap.css">
-    <link rel="stylesheet" href="font-awesome/6.1.1/css/all.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="static/bootstrap/5.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="static/font-awesome/6.1.1/css/all.css">
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -54,6 +54,7 @@
             </table>
             </div>
             <div class="col-md-8">
+                <li>Number: {{currentMarathon.id}}</li>
                 <li>Name: {{currentMarathon.name}}</li>
                 <li>Date: {{currentMarathon.date}}</li>
                 <li>Location: {{currentMarathon.location}}</li>
@@ -64,7 +65,7 @@
             </div>
         </div>
     </div>
-<script src="bootstrap/5.1.3/js/bootstrap.bundle.js"></script>
-<script src="test.js" type="module"></script>
+<script src="static/bootstrap/5.1.3/js/bootstrap.bundle.js"></script>
+<script src="marathon.js" type="module"></script>
 </body>
 </html>
