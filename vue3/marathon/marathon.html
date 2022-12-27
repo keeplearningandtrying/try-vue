@@ -16,7 +16,7 @@
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                 <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <h4>Wei's Marathons</h4>
+                    <h4>Wei's Marathons (11/2008 - Current)</h4>
                 </a>
             </div>
         </div>
@@ -25,41 +25,67 @@
     <div id="app" class="container">
         <div style="height:50px;"></div>
         <div class="col-md-12 float-left">
-            <div class="float-left">
-                <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
-                    <ul class="pagination pagination justify-content-center">
-                        <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                            <a class="page-link" href="#" @click="loadPage(1)">First</a>
-                        </li>
-                        <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
-                            <a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a>
-                        </li>
-                        <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                            <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
-                        </li>
-                        <li class="page-item" :class="{ disabled: !marathons.hasNext }">
-                            <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
             <div class="row">
-                <div class="col-md-4">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr v-for="marathon in marathons.data">
-                                <td style="width: 90%">
-                                    <a href="#" @click="loadMarathon(marathon.id)">{{marathon.id}} - {{marathon.name}}</a>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-md-5">
+                    <div>
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr v-for="marathon in marathons.data">
+                                    <td style="width: 90%">
+                                        <a href="#" @click="loadMarathon(marathon.id)">{{marathon.id}} -
+                                            {{marathon.name}}</a>
+                                    </td>
+                                <tr>
+                                    <td>
+                                        <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
+                                            <ul class="pagination pagination justify-content-center">
+                                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                                </li>
+                                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                                </li>
+                                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                                </li>
+                                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="float-left">
+                        <nav aria-label="Page navigation" v-if="marathons.totalPages > 1">
+                            <ul class="pagination pagination justify-content-left">
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#" @click="loadPage(1)">First</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasPrevious }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber - 1)">Previous</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.pageNumber + 1)">Next</a>
+                                </li>
+                                <li class="page-item" :class="{ disabled: !marathons.hasNext }">
+                                    <a class="page-link" href="#" @click="loadPage(marathons.totalPages)">Last</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <li>Number: {{currentMarathon.id}}</li>
                     <li>Name: {{currentMarathon.name}}</li>
                     <li>Date: {{currentMarathon.date}}</li>
                     <li>Location: {{currentMarathon.location}}</li>
+                    <li>Distance: {{currentMarathon.distance}}</li>
                     <li>Finish Time: {{currentMarathon.time}}</li>
+                    <li>Pace: {{currentMarathon.pace}}</li>
                     <img v-bind:src="currentMarathon.picture" v-bind:alt="currentMarathon.name" height="350">
                 </div>
             </div>
