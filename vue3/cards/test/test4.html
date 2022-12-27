@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>test 1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <img :src="logoURL" :alt="logoCaption" width="200" height="200" />
+    <br>
+    <a href="https://www.sitepoint.com/vue-3-beginner-guide/">See the tutorial</a>
+    <h1>{{ title }}</h1>
+
+    <h2>Add a new task</h2>
+    <span>You have {{ allTasks }} {{ allTasks > 1 ? 'tasks' : 'task' }} at the moment</span>
+
+    <div>
+      <input type="text" v-model="newTask" @keyup.enter="addTask" placeholder="Add a new task">
+
+      <button @click="addTask" :disabled="newTask.length < 1">
+        Add task
+      </button>
+    </div>
+
+    <div v-if="newTask.length > 0">
+      <h3>New task preview</h3>
+      <p>{{ newTask }}</p>
+    </div>
+
+    <ul>
+      <li v-for="(task, index) in latest" :key="task.id" @click="finishTask(task)"
+        :class="{ strikeout: task.finished }">
+        {{ index + 1 }}. {{ task.name }}
+
+        <div v-if="task.finished">
+          <button @click="removeTask(task.id)">Delete task</button>
+        </div>
+      </li>
+    </ul>
+
+     <!-- <coursedisplay :paid="paid"></coursedisplay> -->
+      <img v-bind:src="imgURL" v-bind:alt="hasImageDescription" width="500" height="350">
+        <h1>{{ course }}</h1>
+        <p>{{ description }}</p>
+        <div v-if="premium">
+            <p v-if="available">You can buy the course!</p>
+            <p v-else>The course is not available to buy!</p>
+            <p>{{ price }}</p>
+            <button @click="available = !available">Buy now</button>
+        </div>
+        <ul>
+            <li v-for="tag in tags" :key="tag.id">
+                {{ tag.name }}
+            </li>
+        </ul>
+  </div>
+  <script src="test4.js" type="module"></script>
+
+</body>
+
+</html>

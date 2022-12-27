@@ -33,6 +33,15 @@
 
   * https://learnvue.co/tutorials/intro-to-vue-3
 
+  
+  * https://vuejs.org/guide/introduction.html (official guide)
+  * https://www.sitepoint.com/vue-3-beginner-guide/ (real good)
+    * https://www.w3schools.com/Jsref/jsref_operators.asp (what "..." means)
+    * We should use methods to mutate data and use the computed properties for the presentation layer
+    * event listener - v-on. @click="addTask" same as v-on:click="addTask"
+    * attribute binding - v-bind:src same as :src
+    * Both data and props are reactive, but data is more like "my own state" and props is "I expect to get this from my parent."
+
 ## Use ES6 JavaScript syntax (require, import etc.) in your Front end project
 * https://stackoverflow.com/questions/59317194/how-to-use-npm-package-as-normal-javascript-in-html
 * https://hackernoon.com/use-es6-javascript-syntax-require-import-etc-in-your-front-end-project-5eefcef745c2
