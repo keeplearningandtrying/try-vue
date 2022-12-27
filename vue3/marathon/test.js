@@ -8,12 +8,14 @@ createApp({
     data() {
       return {
         marathons: [],
+        currentMarathon: [],
         newMarathon: { name:"", url:""},
         currentPage: 1
       }
     },
     created: function () {
         this.loadMarathons();
+        this.loadMarathon(1);
     },
     methods: {
         loadMarathons() {
@@ -29,6 +31,15 @@ createApp({
                 self.marathons = data
             });
         },
+
+        loadMarathon(id) {
+            let self = this;
+            var url = 'marathon' + id.toString() + '.json';
+            $.get(url, function (data) {
+                self.currentMarathon = data
+            });
+        },
+
         loadPage(page) {
             this.currentPage = page;
             this.loadMarathons();
