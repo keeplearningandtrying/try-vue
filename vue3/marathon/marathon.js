@@ -6,14 +6,15 @@ createApp({
         return {
             marathons: [],
             currentMarathon: [],
-            newMarathon: { name: "", url: "" },
             currentPage: 1
         }
     },
+
     created: function () {
         this.loadMarathons();
         this.loadMarathon(1);
     },
+
     methods: {
         loadMarathons() {
             let self = this;
