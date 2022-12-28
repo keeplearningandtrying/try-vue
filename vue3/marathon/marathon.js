@@ -11,8 +11,9 @@ createApp({
     },
 
     created: function () {
+        let self = this;
         this.loadMarathons();
-        this.loadMarathon(1);
+        this.loadMarathon(self.currentPage);
     },
 
     methods: {

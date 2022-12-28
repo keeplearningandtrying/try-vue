@@ -29,14 +29,12 @@
                 <div class="col-md-5">
                     <div>
                         <table class="table table-hover">
-                            <tbody>
-                                <tr v-for="marathon in marathons.data">
-                                    <td style="width: 90%">
-                                        <a href="#" @click="loadMarathon(marathon.id)">{{marathon.id}} -
-                                            {{marathon.name}}</a>
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <tr v-for="marathon in marathons.data">
+                                <td style="width: 90%">
+                                    <a href="#" @click="loadMarathon(marathon.id)" :class="{'bg-info' : marathon.id == currentMarathon.id}">{{marathon.id}} -
+                                        {{marathon.name}}</a>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                     <div class="float-left">
