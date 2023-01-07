@@ -13,13 +13,15 @@
   </div>
 </body>
 
-<script type="module">
+<!-- Any difference for the following two? -->
+<!-- <script type="module"> -->
+<script>
   const vueApp = new Vue({
-    el: '#app',
+    // el: '#app',
     data: {
       message: 'Hello World!'
     }
-  })
+  }).$mount('#app')
 </script>
 
 </html>
