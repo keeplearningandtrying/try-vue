@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+    }
+  </script>
+</head>
+
+<body>
+
+  <script type="module">
+    import { createApp } from 'vue'
+
+    createApp({
+      data() {
+        return {
+          text: ''
+        }
+      }
+    }).mount('#app')
+  </script>
+
+  <div id="app">
+    <input v-model="text" placeholder="Type here">
+    <p>{{ text }}</p>
+  </div>
+
+</body>
+
+</html>

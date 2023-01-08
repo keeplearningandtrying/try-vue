@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js",
+            "js-confetti": "https://cdn.jsdelivr.net/npm/js-confetti/+esm"
+        }
+    }
+  </script>
+</head>
+
+<body>
+
+<script type="module">
+import { createApp } from 'vue'
+import  JSConfetti from 'js-confetti'
+
+const confetti = new JSConfetti()
+
+createApp({
+  mounted() {
+    this.showConfetti()
+  },
+  methods: {
+    showConfetti() {
+      confetti.addConfetti()
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <h1 @click="showConfetti">🎉 Congratulations!</h1>
+</div>
+
+  </body>
+
+</html>

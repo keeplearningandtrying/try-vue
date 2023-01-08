@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+    }
+  </script>
+</head>
+
+<body>
+
+  <script type="module">
+    import { createApp } from 'vue'
+
+    createApp({
+      data() {
+        return {
+          message: 'Hello World!',
+          counter: {
+            count: 0
+          }
+        }
+      }
+    }).mount('#app')
+  </script>
+
+  <div id="app">
+    <h1>{{ message }}</h1>
+    <p>Count is: {{ counter.count }}</p>
+  </div>
+
+  </body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue Demo #1: The Box App</title>
+  <meta charset='utf-8' />
+  <script type="importmap">
+    {
+        "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+    }
+  </script>
+</head>
+
+<body>
+
+  <script type="module">
+import { createApp } from 'vue'
+import ChildComp from './ChildComp3.js'
+
+createApp({
+  components: {
+    ChildComp
+  },
+  data() {
+    return {
+      childMsg: 'No child msg yet'
+    }
+  }
+}).mount('#app')
+</script>
+
+<div id="app">
+  <child-comp @response="(msg) => childMsg = msg"></child-comp>
+  <p>{{ childMsg }}</p>
+</div>
+
+  </body>
+
+</html>
