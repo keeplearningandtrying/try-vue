@@ -1,3 +1,6 @@
+## Use vue in HTML, instead of using SFC (Single-File Components .vue file) 
+* https://vuejs.org/guide/quick-start.html#creating-a-vue-application
+* See examples under vue3/beginning
 ## Vue in general
 * https://vuejs.org/examples
 * https://stackoverflow.com/questions/65149231/vue-createapp-is-not-working-but-is-working-with-new-vue-method
