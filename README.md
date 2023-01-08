@@ -1,3 +1,9 @@
+## Official Materials
+* https://vuejs.org/guide/quick-start.html
+* https://vuejs.org/tutorial
+* https://vuejs.org/examples 
+* https://vuejs.org/guide/essentials
+
 ## Use vue in HTML, instead of using SFC (Single-File Components .vue file) 
 * https://vuejs.org/guide/quick-start.html#creating-a-vue-application
 * See examples under vue3/beginning
