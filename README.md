@@ -1,19 +1,46 @@
 ## Official Materials
+
 * https://vuejs.org/guide/quick-start.html
 * https://vuejs.org/tutorial
 * https://vuejs.org/examples 
 * https://vuejs.org/guide/essentials
+* https://vuejs.org/api/
 
 * https://github.com/vuejs/docs/tree/main/src/tutorial
 * https://github.com/vuejs/docs/tree/main/src/examples
 
+## Good resources
+* https://github.com/Code-Pop
+* https://www.vuemastery.com/courses/intro-to-vue-3/intro-to-vue3
+* https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+* vuemastery's cheat sheets are good 
+
+* https://fjolt.com/search/vue
+* https://fjolt.com/article/vue-to-do-list-app
+* https://github.com/smpnjn/vue-todo-list
+
+* https://vueschool.io/lessons/getting-started-with-vue-js-3
+* https://github.com/vueschool/vuejs-3-fundamentals
+* https://github.com/vueschool/vuejs-3-component-fundamentals/
+* https://vueschool.io/courses/vue-router-4-for-everyone
+  * https://github.com/vueschool/vue-router-4-course
+
+* https://vueschool.io/articles/vuejs-tutorials/techniques-for-sharing-data-between-vue-js-components/
+* https://vueschool.io/articles/vuejs-tutorials/how-to-use-vue-router-a-complete-tutorial/
+
+* https://github.com/harblaith7/Vue3-Crash-Course
+  * JSON data for project 3: https://drive.google.com/file/d/1KT0mOrEeIkBBdrzI1paZiTzIYFevmBZB/view?usp=share_link
+* https://www.udemy.com/course/the-vue-3-bootcamp-the-complete-developer-guide/
+* https://www.youtube.com/watch?v=I_xLMmNeLDY
+  * 
+
+
 ## Use vue in HTML, instead of using SFC (Single-File Components .vue file) 
 * https://vuejs.org/guide/quick-start.html#creating-a-vue-application
-* See examples under vue3/beginning
+* See examples under vue3/getstarted
+
 ## Vue in general
-* https://vuejs.org/examples
 * https://stackoverflow.com/questions/65149231/vue-createapp-is-not-working-but-is-working-with-new-vue-method
-* https://vuejs.org/examples/#hello-world
 * https://github.com/vuejs/vue-cli/blob/v4/packages/%40vue/cli-service/lib/commands/build/demo-lib.html
 
 ## Use Vue in html page
@@ -22,12 +49,10 @@
 * https://overclocked.medium.com/a-recipe-for-nesting-components-withina-list-in-vue-js-and-vuex-10b4feb615cb
 * https://developerlife.com/2018/08/15/introduction-to-vue/
   * https://github.com/nazmulidris/vue_intro/tree/master/src
-  
-  
 * https://dev.to/mohsenkamrani/hello-world-in-vuejs-3l1
   
 ## Learn vue
-  * https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started
+  * https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started (good)
   
   * https://blog.codecentric.de/spring-boot-vuejs
   * https://github.com/jonashackt/spring-boot-vuejs
